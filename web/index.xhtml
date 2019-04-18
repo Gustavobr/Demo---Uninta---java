@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Siv-Congresso</title>
+    </h:head>
+    <h:body>
+
+        <div id="logo_title" align="center">
+            <h4 style="font-style: italic;"> SIV-Congresso </h4>
+            <h:graphicImage value="resources/Uninta.png" width="10%" height="10%"/>
+        </div>
+        <b:container fluid="true">
+            <b:jumbotron>
+                <h:form>
+                    <b:navBar inverse="true" >
+                        <b:navbarLinks>
+                            <b:navLink value="Cadastrar Congresso" icon-awesome="group" onclick="PF('dlg3')"/>
+                            <b:navLink value="Cadastrar Participante" icon-awesome="group" onclick="PF('dlg2').show()"/>
+                            <b:navLink value="Cadastrar Faculdade/Universidade" icon-awesome="group" onclick="PF('dlg4')"/>
+                            <b:navLink value="Listar Faculdades" icon-awesome="group" onclick="PF('dlg5')"/>
+                            <b:navLink value="Listar Participantes" icon-awesome="group" onclick="PF('dlg1').show()"/>
+                            <b:navLink value="Listar Congressos" icon-awesome="group" onclick="PF('dlg6')"/>
+                        </b:navbarLinks>
+                    </b:navBar>
+                </h:form>
+                <br/>
+                <br/>
+                <p:dialog widgetVar="dlg2" closable="true" header="Cadastrar Participante" width="50%" height="50%" modal="true">
+                    <h:form>
+                        <p:messages style="color: appworkspace;">
+                            <p:panel menuTitle="Cadastrar Partifipante">
+                                <b:label text="Nome:"></b:label><b:inputText required="true" required-message="Inserir nome"
+                                                                             placeholder="Nome" value="#{p_controller.p.nome}"/>
+                                <br/>
+                                <b:label text="Curso:"></b:label><b:inputText required="true" required-message="Inserir curso"
+                                                                              placeholder="Curso" value="#{p_controller.p.curso}"/>
+                                <br/>
+                                <b:label text="Email:"></b:label><b:inputText required="true" required-message="Inserir email"
+                                                                              placeholder="Email" value="#{p_controller.p.email}"/>
+                                <br/>
+                                <b:label text="Trabalho:"></b:label><b:inputText required="true" required-message="Inserir Trabalho."
+                                                                                 placeholder="Trabalho" value="#{p_controller.p.trabalho}"/>
+                                <br/>
+                                <b:commandButton class="btn-sucess" value="Gravar" onclick="#{p_controller.salvar()}"/>
+                            </p:panel>
+                        </p:messages>
+                    </h:form>
+                </p:dialog>
+
+            </b:jumbotron>
+        </b:container>
+        <p:layoutUnit collapsible="true" position="absolute">
+            <p:fieldset>
+                <div align="center">
+                <footer>
+                    <address style="border-color: blue;">
+                        FreeLancer: TEl: (85)992659955; Email: GustavoScipiao@gmail.com
+                    </address>
+                </footer>
+                </div>    
+            </p:fieldset>
+                
+        </p:layoutUnit>
+
+    </h:body>
+</html>
+
